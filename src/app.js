@@ -105,17 +105,9 @@ animate();
 let generateDomain = () => {
   let domineStart = ["http://www."];
   let domineFirst = ["caza", "tiembla", "gico", "muerde"];
-  let domineSecond = [
-    "royo",
-    "fiesta",
-    "nori",
-    "lepo",
-    "tuki",
-    "mambo",
-    "troncho"
-  ];
-  let domineThird = ["company", "shop", "market", "sellers"];
-  let domineEnd = [".com", ".es", ".net"];
+  let domineSecond = ["royo", "fiesta", "nori", "lepo"];
+  let domineThird = ["company", "shop", "market"];
+  let domineEnd = [".com", ".es", ".net", ".io", ".us"];
 
   let startIndex = generateRandomNumber(domineStart);
   let firstIndex = generateRandomNumber(domineFirst);
