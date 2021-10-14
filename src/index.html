@@ -13,10 +13,40 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">This is your new domain</h1>
+    <!-- Explanation in JS tab -->
 
-      <p class="alert alert-info mt-4" id="domain"></p>
+    <!-- The two texts -->
+    <div id="container">
+      <span id="text1"></span>
+      <span id="text2"></span>
+    </div>
+
+    <!-- The SVG filter used to create the merging effect -->
+    <svg id="filters">
+      <defs>
+        <filter id="threshold">
+          <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 0 255 -140"
+          />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="container-fluid text-center">
+      <button type="button" id="btn" class="btn btn-dark">
+        Generate your Domain
+      </button>
+      <p
+        class="alert offset-2 col-8 text-fluid alert-dark mt-4"
+        id="domain"
+      ></p>
+      8
       <div class="fixed-bottom p-4">
         Made with ❤️ by
         <a href="https://github.com/Folkenciyo">Folkenciyo</a>
