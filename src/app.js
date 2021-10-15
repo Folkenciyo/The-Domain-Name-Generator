@@ -8,7 +8,8 @@ import "./assets/img/4geeks.ico";
 window.onload = function() {
   document.querySelector("#btn").addEventListener("click", () => {
     document.querySelector("#domain").innerHTML = generateDomain();
-    document.querySelector("#domain2").innerHTML = generateDomain();
+    document.querySelector("#domainSingle").innerHTML = generateDomain();
+    document.querySelector("#domainList").innerHTML = generateList();
   });
 
   console.log("e");
@@ -24,7 +25,7 @@ const elts = {
 };
 
 // The strings to morph between. You can change these to anything you want!
-const texts = ["THiS", "iS", "YouRS", "NeW", "DoMaiN"];
+const texts = ["THiS", "iS", "YouR", "NeW", "DoMaiN"];
 
 // Controls the speed of morphing.
 const morphTime = 1;
@@ -101,19 +102,18 @@ function animate() {
 
 // Start the animation.
 animate();
+let domainStart = ["http://www."];
+let domainFirst = ["caza", "tiembla", "gico", "muerde"];
+let domainSecond = ["royo", "fiesta", "nori", "lepo"];
+let domainThird = ["company", "shop", "market"];
+let domainEnd = [".com", ".es", ".net", ".io", ".us"];
 
 let generateDomain = () => {
-  let domineStart = ["http://www."];
-  let domineFirst = ["caza", "tiembla", "gico", "muerde"];
-  let domineSecond = ["royo", "fiesta", "nori", "lepo"];
-  let domineThird = ["company", "shop", "market"];
-  let domineEnd = [".com", ".es", ".net", ".io", ".us"];
-
-  let startIndex = generateRandomNumber(domineStart);
-  let firstIndex = generateRandomNumber(domineFirst);
-  let secondIndex = generateRandomNumber(domineSecond);
-  let thirdIndex = generateRandomNumber(domineThird);
-  let endIndex = generateRandomNumber(domineEnd);
+  let startIndex = generateRandomNumber(domainStart);
+  let firstIndex = generateRandomNumber(domainFirst);
+  let secondIndex = generateRandomNumber(domainSecond);
+  let thirdIndex = generateRandomNumber(domainThird);
+  let endIndex = generateRandomNumber(domainEnd);
 
   function generateRandomNumber(dominePosition) {
     let randomNumber = Math.floor(Math.random() * dominePosition.length);
@@ -121,10 +121,32 @@ let generateDomain = () => {
   }
 
   return (
-    domineStart[startIndex] +
-    domineFirst[firstIndex] +
-    domineSecond[secondIndex] +
-    domineThird[thirdIndex] +
-    domineEnd[endIndex]
+    domainStart[startIndex] +
+    domainFirst[firstIndex] +
+    domainSecond[secondIndex] +
+    domainThird[thirdIndex] +
+    domainEnd[endIndex]
   );
+};
+// generate a list
+
+let generateList = () => {
+  let list = [];
+  for (let i in domainFirst) {
+    for (let z in domainSecond) {
+      for (let q in domainThird) {
+        for (let p in domainEnd) {
+          list.push(
+            domainStart[0] +
+              domainFirst[i] +
+              domainSecond[z] +
+              domainThird[q] +
+              domainEnd[p] +
+              " "
+          );
+        }
+      }
+    }
+  }
+  return list;
 };

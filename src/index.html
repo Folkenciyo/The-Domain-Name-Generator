@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="domain2"></title>
+    <title id="domain"></title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -38,14 +38,28 @@
       </defs>
     </svg>
 
-    <div class="container-fluid text-center">
-      <button type="button" id="btn" class="btn btn-dark">
+    <div class="row container-fluid text-center">
+      <button type="button" id="btn" class="offset-5 col-2 btn btn-dark">
         Generate your Domain
       </button>
       <p
-        class="alert offset-2 col-8 text-fluid alert-dark mt-4"
-        id="domain"
+        class="alert offset-3 col-6 text-fluid alert-dark mt-4"
+        id="domainSingle"
       ></p>
+      
+    </div>
+    <div class="row container d-flex justify-content-start bd-highlight">  
+      <div class="col-3">
+        
+         <p
+          class="d-flex flex-column"
+          id="domainList"
+        ></p>
+      </div>
+      <div class="offset-9"></div>
+     
+  </div>
+
       <div class="fixed-bottom p-4">
         Made with ❤️ by
         <a href="https://github.com/Folkenciyo">Folkenciyo</a>
