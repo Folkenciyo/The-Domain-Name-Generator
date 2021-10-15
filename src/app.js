@@ -103,9 +103,9 @@ function animate() {
 // Start the animation.
 animate();
 let domainStart = ["http://www."];
-let domainFirst = ["caza", "tiembla", "gico", "muerde"];
-let domainSecond = ["royo", "fiesta", "nori", "lepo"];
-let domainThird = ["company", "shop", "market"];
+let domainFirst = ["the", "this", "those", "a"];
+let domainSecond = ["main", "best", "only", "find"];
+let domainThird = ["pokemon", "basesgi", "pollitopio", "us"];
 let domainEnd = [".com", ".es", ".net", ".io", ".us"];
 
 let generateDomain = () => {
