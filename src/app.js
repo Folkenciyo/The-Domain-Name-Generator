@@ -105,8 +105,8 @@ animate();
 let domainStart = ["http://www."];
 let domainFirst = ["the", "this", "those", "a"];
 let domainSecond = ["main", "best", "only", "find"];
-let domainThird = ["pokemon", "basesgi", "pollitopio", "us"];
-let domainEnd = [".com", ".es", ".net", ".io", ".us"];
+let domainThird = ["muertus", "llorones", "pollitopio", "us"];
+let domainEnd = ["com", "es", "net", "io", "us"];
 
 let generateDomain = () => {
   let startIndex = generateRandomNumber(domainStart);
@@ -136,14 +136,29 @@ let generateList = () => {
     for (let z in domainSecond) {
       for (let q in domainThird) {
         for (let p in domainEnd) {
-          list.push(
-            domainStart[0] +
-              domainFirst[i] +
-              domainSecond[z] +
-              domainThird[q] +
-              domainEnd[p] +
-              " "
-          );
+          let similarToEnd = domainThird[q].slice(-domainEnd[p].length);
+          console.log(similarToEnd);
+          if (similarToEnd == domainEnd[p]) {
+            list.push(
+              domainStart[0] +
+                domainFirst[i] +
+                domainSecond[z] +
+                domainThird[q].slice(0, -domainEnd[p].length) +
+                "." +
+                domainEnd[p] +
+                " "
+            );
+          } else {
+            list.push(
+              domainStart[0] +
+                domainFirst[i] +
+                domainSecond[z] +
+                domainThird[q] +
+                "." +
+                domainEnd[p] +
+                " "
+            );
+          }
         }
       }
     }
